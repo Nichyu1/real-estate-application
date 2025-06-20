@@ -74,7 +74,7 @@ const Properties = () => {
         );
     });
 
-    return (
+  return (
         <div className="properties-page">
             <section className="search-section">
                 <div className="search-container">
@@ -211,7 +211,7 @@ const Properties = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+    </div>
             </section>
 
             <section className="properties-section">

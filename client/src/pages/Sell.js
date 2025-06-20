@@ -159,7 +159,7 @@ const Sell = () => {
                     throw new Error(`Year built must be between 1800 and ${currentYear + 1}`);
                 }
             }
-
+            
             const propertyData = {
                 title: formData.title,
                 description: formData.description,
@@ -185,23 +185,23 @@ const Sell = () => {
             // Debug log
             console.log('Property Data being sent:', propertyData);
 
-            const response = await fetch('http://localhost:5001/api/properties', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+                const response = await fetch('http://localhost:5001/api/properties', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
                     'x-auth-token': localStorage.getItem('token')
-                },
+                    },
                 body: JSON.stringify(propertyData)
-            });
+                });
 
             const data = await response.json();
 
-            if (!response.ok) {
+                if (!response.ok) {
                 throw new Error(data.message || 'Failed to create property listing');
-            }
-
-            alert('Property listing created successfully!');
-            navigate('/properties');
+                }
+                
+                alert('Property listing created successfully!');
+                navigate('/properties');
         } catch (err) {
             console.error('Error submitting form:', err);
             setError(err.message);
@@ -306,13 +306,13 @@ const Sell = () => {
                                 {/* Basic Information */}
                                 <div className="form-group">
                                     <label htmlFor="title">Property Title</label>
-                                    <input
-                                        type="text"
+                        <input
+                            type="text"
                                         id="title"
-                                        name="title"
-                                        value={formData.title}
-                                        onChange={handleChange}
-                                        required
+                            name="title"
+                            value={formData.title}
+                            onChange={handleChange}
+                            required
                                         placeholder="Enter property title"
                                     />
                                 </div>
@@ -327,8 +327,8 @@ const Sell = () => {
                                         onChange={handleChange}
                                         required
                                         placeholder="Enter price"
-                                    />
-                                </div>
+                        />
+                    </div>
 
                                 <div className="form-group">
                                     <label htmlFor="type">Property Type</label>
@@ -353,13 +353,13 @@ const Sell = () => {
                                 {/* Location */}
                                 <div className="form-group">
                                     <label htmlFor="location">Location</label>
-                                    <input
-                                        type="text"
+                        <input
+                            type="text"
                                         id="location"
-                                        name="location"
-                                        value={formData.location}
-                                        onChange={handleChange}
-                                        required
+                            name="location"
+                            value={formData.location}
+                            onChange={handleChange}
+                            required
                                         placeholder="Enter property location"
                                     />
                                 </div>
@@ -386,18 +386,18 @@ const Sell = () => {
                                         value={formData.bathrooms}
                                         onChange={handleChange}
                                         placeholder="Number of bathrooms"
-                                    />
-                                </div>
+                        />
+                    </div>
 
                                 <div className="form-group">
                                     <label htmlFor="area">Area (sq ft)</label>
-                                    <input
-                                        type="number"
+                        <input
+                            type="number"
                                         id="area"
                                         name="area"
                                         value={formData.area}
-                                        onChange={handleChange}
-                                        required
+                            onChange={handleChange}
+                            required
                                         placeholder="Property area"
                                     />
                                 </div>
@@ -411,30 +411,30 @@ const Sell = () => {
                                         value={formData.yearBuilt}
                                         onChange={handleChange}
                                         placeholder="Year built"
-                                    />
-                                </div>
+                        />
+                    </div>
 
                                 {/* Description */}
                                 <div className="form-group full-width">
                                     <label htmlFor="description">Description</label>
-                                    <textarea
+                        <textarea
                                         id="description"
-                                        name="description"
-                                        value={formData.description}
-                                        onChange={handleChange}
-                                        required
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                            required
                                         placeholder="Describe your property..."
-                                    ></textarea>
-                                </div>
+                        ></textarea>
+                    </div>
 
                                 {/* Images Upload */}
                                 <div className="form-group full-width">
                                     <label>Images</label>
                                     <div className="image-upload">
-                                        <input
-                                            type="file"
-                                            multiple
-                                            onChange={handleImageChange}
+                        <input
+                            type="file"
+                            multiple
+                            onChange={handleImageChange}
                                             id="image-upload"
                                             className="hidden"
                                         />
@@ -488,8 +488,8 @@ const Sell = () => {
                                         onChange={handleChange}
                                         required
                                         placeholder="Enter your phone number"
-                                    />
-                                </div>
+                        />
+                    </div>
 
                                 {/* Submit Button */}
                                 <button
@@ -498,8 +498,8 @@ const Sell = () => {
                                     disabled={loading}
                                 >
                                     {loading ? 'Processing...' : 'Submit Listing'}
-                                </button>
-                            </form>
+                    </button>
+                </form>
                         </div>
                     </div>
 
