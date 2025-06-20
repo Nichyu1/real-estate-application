@@ -1,0 +1,60 @@
+/* Add these styles to your existing styles.css file */
+
+.error-message {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.user-type-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.user-type-option {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.user-type-option.selected {
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.user-type-option input[type="radio"] {
+  display: none;
+}
+
+.user-type-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.user-type-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.user-type-label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .user-type-options {
+    flex-direction: column;
+  }
+}
